@@ -17,3 +17,6 @@ def views():
     global view_count
     view_count += 1
     return "This page has been viewed " + str(view_count) + " times"
+
+if __name__ == '__main__':
+   app.run()
