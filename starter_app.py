@@ -1,22 +1,23 @@
-from datetime import datetime
-from flask import Flask
+# from datetime import datetime
+from flask import Flask, render_template
+from data_model import db
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello, Flask!"
+    return render_template(
+        "welcome.html",
+        message="Here's a message from the view that is loaded via Jinja"
+        )
 
-@app.route("/date")
-def date():
-    return "This page was served at " + str(datetime.now())
-
-view_count = 0
-@app.route("/views")
-def views():
-    global view_count
-    view_count += 1
-    return "This page has been viewed " + str(view_count) + " times"
+@app.route("/superheroes")
+def superhero_view():
+    superheroes = db[0]
+    return render_template(
+        "superheroes.html", 
+        hero=superheroes
+        )
 
 if __name__ == '__main__':
    app.run()

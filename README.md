@@ -43,12 +43,12 @@ Since the name of our script is starter_app.py, the name of our app is 'starter_
 
     python
 
-...now we can run the commands below to import our app.
+...now we can run the commands below to import our app...
     >>> import starter_app
     >>> starter_app.app
     <Flask 'app'>
 
-Now call the **url_map** attribute command to see how the urls map
+...and then call the **url_map** attribute command to see how the urls map
     >>> starter_app.app.url_map
     Map([<Rule '/static/<filename>' (GET, HEAD, OPTIONS) -> static>,
     <Rule '/' (GET, HEAD, OPTIONS) -> home>,
@@ -62,15 +62,17 @@ The '/static/<filename>' mapping is added by default, meaning anything you put i
 
 ---
 ## The Model-Template-View (MTV) pattern
-Every modern web framework follows the same basic pattern called model-template view. This is a set of best practices for organizing the code.
+Every modern web framework follows the same basic pattern called model-template-view. This is a set of best practices for organizing the code.
 
 There are three types of components - models, templates, and views. Each has a clear responsibility. 
 
-- **Templates** are components that will generate HTML and display data to our users. Flask expects these to be stored in a 'templates' folder within the project. For this project we are using a library called Jinja.
+- **Models** refers to the data model layer. This would usually be a database such as MySQL or Oracle, but Flask does not provide a built-in data layer. To keep this app simple we instead connect to a file that contains JSON data.
 
-- **Models** refers to the data model, and would usually be a database like MySQL or Oracle. To keep this Flask app simple we will instead connect to a file that contains JSON data.
+- **Views** are the behavior layer and are Python functions which are mapped to URLs in our app
 
-- **Views**
+- **Templates** are the presentation layer and are components that will generate HTML and display data to our users. Flask expects these to be stored in a 'templates' folder within the project. For this project we are using a library called Jinja which allows us to generate dynamic HTML.
+
+Outside of the Python world this will be referred to instead as the Model-View-Controller model, but is functionally the same.
 
 ---
 ## Move the environment variables to a file
