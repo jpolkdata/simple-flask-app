@@ -8,5 +8,12 @@
     <h1>Here's a superhero alias</h1>
     Name:   {{ superhero.Name }} <br>
     Alias:  {{ superhero.Alias }}
+    <p>
+        <button>
+            <a href="/superhero/{{ index + 1 }}">
+                Next superhero
+            </a>
+        </button>
+    </p>
 </body>
 </html>
