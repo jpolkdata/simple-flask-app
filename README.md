@@ -22,3 +22,9 @@ There are three types of components - models, templates, and views. Each has a c
 - **Templates** are the presentation layer and are components that will generate HTML and display data to our users. Flask expects these to be stored in a 'templates' folder within the project. For this project we are using a library called Jinja which allows us to generate dynamic HTML.
 
 Outside of the Python world this will be referred to instead as the Model-View-Controller model, but is functionally the same.
+
+---
+## Images
+I've used a comic book photograph for the welcome page. This image is courtesy of Erik Mclean via the Unsplash photo gallery. The photo is free for commercial and non-commerical use under the Unsplash License.
+
+https://unsplash.com/photos/LSPUdV6IWsY

@@ -5,13 +5,15 @@
     <title>Welcome!</title>
 </head>
 <body>
-    <h1>Welcome to my page!</h1>
-    <p>
-        This is a demo app
-    </p>
-    <img src="/static/flask_logo.png">
+    <h1>Let's find some superheroes!</h1>
+    <img src="/static/comics_erik_mclean.jpg", width="25%">
     <p>
         {{message}}
     </p>
+    <button>
+        <a href="{{ url_for('superhero_view', index=0) }}">
+            Go to the superheroes!
+        </a>
+    </button>
 </body>
 </html>
