@@ -7,8 +7,8 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template(
-        "welcome.html",
-        message="Here's a message from the view that is loaded via Jinja"
+        "welcome.html"
+        , superheroes = db
         )
 
 @app.route("/superhero/<int:index>")
@@ -17,7 +17,8 @@ def superhero_view(index):
         superhero = db[index]
         return render_template("superheroes.html"
             , superhero=superhero
-            , index=index)
+            , index=index
+            , max_index=len(db)-1)
     except IndexError:
         abort(404)
 

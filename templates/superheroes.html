@@ -10,11 +10,17 @@
     Alias:  {{ superhero.Alias }}
     <p>
         <button>
-            <a href="{{ url_for('superhero_view', index=index + 1) }}">
+        {% if index < max_index %}
+            <a href="{{ url_for('superhero_view', index=index+1) }}">
                 Next superhero
             </a>
+        {% else %}
+            <a href="{{ url_for('superhero_view', index=0) }}">
+                Start over
+            </a>
+        {% endif %}
         </button>
-        <br>
+         | 
         <button>
             <a href="{{ url_for('home') }}">
                 Return to the home page

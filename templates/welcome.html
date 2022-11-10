@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome!</title>
+    <title>Superhero Aliases</title>
 </head>
 <body>
-    <h1>Let's find some superheroes!</h1>
+    <h1>What aliases do superheroes use?</h1>
     <img src="/static/comics_erik_mclean.jpg", width="25%">
     <p>
         {{message}}
@@ -15,5 +15,15 @@
             Go to the superheroes!
         </a>
     </button>
+    <h2>Superheroes</h2>
+    <ul>
+        {% for superhero in superheroes %}
+            <li>
+                <a href="{{ url_for('superhero_view', index=loop.index0) }}">
+                    {{ superhero.Name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
