@@ -1,5 +1,5 @@
 # from datetime import datetime
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, jsonify
 from data_model import db
 
 app = Flask(__name__)
@@ -19,6 +19,18 @@ def superhero_view(index):
             , superhero=superhero
             , index=index
             , max_index=len(db)-1)
+    except IndexError:
+        abort(404)
+
+# REST API Endpoints
+@app.route("/api/superhero/")
+def api_superhero_list():
+    return jsonify(db)
+
+@app.route("/api/superhero/<int:index>")
+def api_superhero_detail(index):
+    try:
+        return db[index]
     except IndexError:
         abort(404)
 
