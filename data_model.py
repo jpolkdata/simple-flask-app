@@ -13,4 +13,8 @@ def load_db():
     with open("superheroes.json") as f:
         return json.load(f)
 
+def save_db():
+    with open("superheroes.json", 'w') as f:
+        return json.dump(db, f)
+
 db = load_db()
