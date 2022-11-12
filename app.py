@@ -8,7 +8,7 @@ app = Flask(__name__)
 def home():
     return render_template("welcome.html", superheroes = db)
 
-@app.route("/superhero/<int:index>")
+@app.route("/superhero/<int:index>", methods=["GET","POST"])
 def superhero_view(index):
     try:
         superhero = db[index]
@@ -30,6 +30,19 @@ def add_superhero():
         return redirect(url_for('superhero_view',index=len(db)-1))
     else:
         return render_template("add_superhero.html")
+
+@app.route("/remove_superhero/<int:index>", methods=["GET", "POST"])
+def remove_superhero(index):
+    if request.method == "POST":
+        # The user is removing an existing hero
+        try:
+            del db[index]
+            save_db()
+            return redirect(url_for('home'))
+        except IndexError:
+            abort(404)
+    else:
+        return render_template("remove_superhero.html", superhero=db[index])
 
 # REST API Endpoints
 @app.route("/api/superhero/")

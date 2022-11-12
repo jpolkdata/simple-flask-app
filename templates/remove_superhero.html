@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove a Superhero</title>
+</head>
+<body>
+    <h1>Remove this superhero?</h1>
+    Name:   {{ superhero.Name }} <br>
+    Alias:  {{ superhero.Alias }}
+
+    <h2>Are you sure?</h2>
+    <form method="post">
+        <button type="submit">Yes</button>
+        <a href="{{ url_for('home') }}">No</a>
+    </form>
+</body>
+</html>

@@ -20,7 +20,13 @@
             </a>
         {% endif %}
         </button>
-         | 
+        | 
+        <button>
+            <a href="{{ url_for('remove_superhero', index=index) }}">
+                Remove this hero
+            </a>
+        </button>
+        | 
         <button>
             <a href="{{ url_for('home') }}">
                 Return to the home page
