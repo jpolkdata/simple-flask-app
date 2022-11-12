@@ -1,7 +1,7 @@
 # simple-flask-app
 Simple use case of Flask to build a web app. This illustrates the commonly-used MTV pattern. The basic functionality allows us to retrieve data from a database as well as adding and removing records.
 
-The user is given a listing of superhero names. As the user interacts with the list, each superhero's alias is provided. The user can choose to interact with the list, either by deleting or adding new entries.
+The user is given a listing of superhero names. As the user interacts with the list, each superhero's alias is provided. The user can further choose to interact with the list by retrieving the next hero, deleting the haro, or adding a new hero.
 
 ---
 ## Getting started
