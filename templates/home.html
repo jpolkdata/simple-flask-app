@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" 
-          href="{{ url_for('static', filename='style.css') }}">
-    <title>Superhero Aliases</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
     <h1>What aliases do superheroes use?</h1>
     <button>
         <a href="{{ url_for('superhero_view', index=0) }}">
@@ -19,15 +15,16 @@
             Add a new hero
         </a>
     </button>
+
     <h2>Full List</h2>
     <ul>
         {% for superhero in superheroes %}
             <li>
                 <a href="{{ url_for('superhero_view', index=loop.index0) }}">
-                    {{ superhero.Name }}
+                    {{ superhero.Alias }}
                 </a>
             </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+
+{% endblock %}

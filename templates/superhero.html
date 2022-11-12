@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" 
-          href="{{ url_for('static', filename='style.css') }}">
-    <title>Superheroes</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Superhero{% endblock %}
+
+{% block content %}
     <h1>Here's a superhero alias</h1>
     Name:   {{ superhero.Name }} <br>
     Alias:  {{ superhero.Alias }}
@@ -35,5 +31,4 @@
             </a>
         </button>
     </p>
-</body>
-</html>
+{% endblock %}
