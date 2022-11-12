@@ -6,10 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template(
-        "welcome.html"
-        , superheroes = db
-        )
+    return render_template("welcome.html", superheroes = db)
 
 @app.route("/superhero/<int:index>")
 def superhero_view(index):

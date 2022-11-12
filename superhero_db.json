@@ -1,0 +1,38 @@
+[
+    {
+        "Alias": "Superman",
+        "Name": "Clark Kent / Kal-El"
+    },
+    {
+        "Alias": "Batman",
+        "Name": "Bruce Wayne"
+    },
+    {
+        "Alias": "Wonder Woman",
+        "Name": "Diana Prince / Princess Diana"
+    },
+    {
+        "Alias": "The Flash",
+        "Name": "Barry Allen"
+    },
+    {
+        "Alias": "Green Lantern",
+        "Name": "Hal Jordan"
+    },
+    {
+        "Alias": "Aquaman",
+        "Name": "Arthur Curry / Orin"
+    },
+    {
+        "Alias": "Martian Manhunter",
+        "Name": "John Jones / J'onn J'onzz"
+    },
+    {
+        "Alias": "Green Arrow",
+        "Name": "Oliver Queen"
+    },
+    {
+        "Name": "test",
+        "Alias": "test"
+    }
+]
