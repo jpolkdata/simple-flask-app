@@ -6,13 +6,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("welcome.html", superheroes = db)
+    return render_template("home.html", superheroes = db)
 
 @app.route("/superhero/<int:index>", methods=["GET","POST"])
 def superhero_view(index):
     try:
         superhero = db[index]
-        return render_template("superheroes.html"
+        return render_template("superhero.html"
             , superhero=superhero
             , index=index
             , max_index=len(db)-1)
